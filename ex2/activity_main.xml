@@ -1,81 +1,165 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingLeft="8dp"
-    android:paddingRight="8dp"
-    android:paddingTop="8dp"
-    android:paddingBottom="8dp" tools:context=".MainActivity">
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Sample Program"
-        android:id="@+id/txtSample"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true" />
-        <LinearLayout
-            android:orientation="vertical"
-            android:layout_width="match_parent"
-            android:layout_height="fill_parent"
-            android:layout_below="@+id/txtSample"
-            android:layout_centerHorizontal="true">
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/imageView"
-            android:layout_gravity="center_horizontal"
-            android:src="@drawable/logo" />
+    android:orientation="vertical"
+    tools:context=".MainActivity"
+    android:background="#E3F2FD ">
+
+    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
         <TableLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:id="@+id/tableRow"
-                android:orientation="horizontal">
-                <Button
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Click Me"
-                    android:id="@+id/btnClick" />
-                <Button
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Long Click Me"
-                    android:id="@+id/btnLongClick" />
-            </TableRow>
-        </TableLayout>
-        <GridLayout
-            android:layout_width="match_parent"
-            android:layout_height="fill_parent"
-            android:id="@+id/lytGrid">
-            <Button
-                android:layout_width="202dp"
-                android:layout_height="156dp"
-                android:text="Click or Long CLick \n Me"
-                android:id="@+id/btnAll"
-                android:layout_column="3"
-                android:layout_row="0"
-                android:layout_columnSpan="1"
-                android:layout_rowSpan="2" />
-            <Button
-                android:layout_width="143dp"
-                android:layout_height="match_parent"
-                android:text="Show \nMy \nName"
-                android:id="@+id/btnShowName"
-                android:layout_row="1"
-                android:layout_column="2"
-                android:layout_rowSpan="3" />
+            android:layout_height="match_parent"
+            android:stretchColumns="1">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Hospital Registration Form"
+                android:textSize="30dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Name"
+                android:textSize="20dp" />
             <EditText
+                android:id="@+id/n1"
+                android:layout_width="400dp"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Address"
+                android:textSize="20dp" />
+            <EditText
+                android:id="@+id/n2"
+                android:layout_width="400dp"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Age"
+                android:textSize="20dp"/>
+            <EditText
+                android:id="@+id/n3"
+                android:layout_width="400dp"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Date Of Birth"
+                android:textSize="20dp"/>
+            <EditText
+                android:id="@+id/n4"
+                android:layout_width="400dp"
+                android:layout_height="wrap_content"/>
+
+            <Button
+                android:layout_width="100dp"
+                android:layout_height="50dp"
+                android:layout_gravity="left"
+                android:text="Set Date"
+                android:background="#78909c"
+                android:id="@+id/button"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Gender"
+                android:textSize="20dp"/>
+            <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
                 android:layout_width="match_parent"
-                android:layout_height="62dp"
-                android:id="@+id/txtName"
-                android:layout_row="3"
-                android:layout_column="3"
-                android:hint="Enter your Name"
-                android:layout_columnSpan="1"
-                android:layout_rowSpan="1" />
-        </GridLayout>
-    </LinearLayout>
-</RelativeLayout>
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <RadioButton android:id="@+id/male"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Male"
+                    android:onClick="onRadioButtonClicked"/>
+                <RadioButton android:id="@+id/female"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Female"
+                    android:onClick="onRadioButtonClicked"/>
+            </RadioGroup>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Marital Status"
+                android:textSize="20dp"/>
+            <Spinner
+                android:id="@+id/marital"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Phone Number"
+                android:textSize="20dp"/>
+            <EditText
+                android:id="@+id/n5"
+                android:layout_width="400dp"
+                android:layout_height="wrap_content"
+                android:inputType="phone"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Registration Time"
+                android:textSize="20dp"/>
+            <EditText
+                android:id="@+id/n6"
+                android:layout_width="400dp"
+                android:layout_height="wrap_content"/>
+            <Button
+                android:layout_width="100dp"
+                android:layout_height="50dp"
+                android:layout_gravity="left"
+                android:text="Set Time"
+                android:background="#78909c"
+                android:id="@+id/time"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Addiction"
+                android:textSize="20dp"/>
+            <CheckBox
+                android:id="@+id/alcohol"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Alcohol"
+                android:onClick="onCheckboxClicked"/>
+            <CheckBox
+                android:id="@+id/smoking"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Smoking"
+                android:onClick="onCheckboxClicked"/>
+            <Button
+                android:layout_width="100dp"
+                android:layout_height="50dp"
+                android:layout_gravity="left"
+                android:text="Submit"
+                android:background="#78909c"
+                android:id="@+id/submit"
+                android:onClick="onSubmitClicked"/>
+            <Button
+                android:layout_width="100dp"
+                android:layout_height="50dp"
+                android:layout_gravity="left"
+                android:text="Reset"
+                android:background="#78909c"
+                android:id="@+id/reset"
+                android:onClick="onResetClicked"/>
+        </TableLayout>
+    </ScrollView>
+</LinearLayout>

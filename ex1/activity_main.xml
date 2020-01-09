@@ -4,118 +4,162 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingTop="50dp"
     android:orientation="vertical"
     tools:context=".MainActivity"
     android:background="#E3F2FD ">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hospital Registration Form"
-        android:textSize="30dp" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Name"
-        android:textSize="20dp" />
-    <EditText
-        android:id="@+id/n1"
-        android:layout_width="400dp"
-        android:layout_height="wrap_content" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Address"
-        android:textSize="20dp" />
-    <EditText
-        android:id="@+id/n2"
-        android:layout_width="400dp"
-        android:layout_height="wrap_content" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Age"
-        android:textSize="20dp"/>
-    <EditText
-        android:id="@+id/n3"
-        android:layout_width="400dp"
-        android:layout_height="wrap_content"/>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Date Of Birth"
-        android:textSize="20dp"/>
-    <EditText
-        android:id="@+id/n4"
-        android:layout_width="400dp"
-        android:layout_height="wrap_content"/>
-
-    <Button
-        android:layout_width="100dp"
-        android:layout_height="50dp"
-        android:layout_gravity="left"
-        android:text="Set Date"
-        android:background="#78909c"
-        android:id="@+id/button"/>
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Gender"
-        android:textSize="20dp"/>
-    <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
+    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
-        <RadioButton android:id="@+id/radio_pirates"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Male"
-            android:onClick="onRadioButtonClicked"/>
-        <RadioButton android:id="@+id/radio_ninjas"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Female"
-            android:onClick="onRadioButtonClicked"/>
-    </RadioGroup>
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Marital Status"
-        android:textSize="20dp"/>
-    <Spinner
-        android:id="@+id/marital"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content" />
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Phone Number"
-        android:textSize="20dp"/>
-    <EditText
-        android:id="@+id/n5"
-        android:layout_width="400dp"
-        android:layout_height="wrap_content"
-        android:inputType="phone"/>
+        android:layout_height="match_parent"
+        android:fillViewport="true">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Registration Time"
-        android:textSize="20dp"/>
-    <EditText
-        android:id="@+id/n6"
-        android:layout_width="400dp"
-        android:layout_height="wrap_content"/>
-    <Button
-        android:layout_width="100dp"
-        android:layout_height="50dp"
-        android:layout_gravity="left"
-        android:text="Set Time"
-        android:background="#78909c"
-        android:id="@+id/time"/>
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:stretchColumns="1">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Hospital Registration Form"
+                android:textSize="30dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Name"
+                android:textSize="20dp" />
+            <EditText
+                android:id="@+id/n1"
+                android:layout_width="400dp"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Address"
+                android:textSize="20dp" />
+            <EditText
+                android:id="@+id/n2"
+                android:layout_width="400dp"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Age"
+                android:textSize="20dp"/>
+            <EditText
+                android:id="@+id/n3"
+                android:layout_width="400dp"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Date Of Birth"
+                android:textSize="20dp"/>
+            <EditText
+                android:id="@+id/n4"
+                android:layout_width="400dp"
+                android:layout_height="wrap_content"/>
+
+            <Button
+                android:layout_width="100dp"
+                android:layout_height="50dp"
+                android:layout_gravity="left"
+                android:text="Set Date"
+                android:background="#78909c"
+                android:id="@+id/button"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Gender"
+                android:textSize="20dp"/>
+            <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <RadioButton android:id="@+id/male"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Male"
+                    android:onClick="onRadioButtonClicked"/>
+                <RadioButton android:id="@+id/female"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Female"
+                    android:onClick="onRadioButtonClicked"/>
+            </RadioGroup>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Marital Status"
+                android:textSize="20dp"/>
+            <Spinner
+                android:id="@+id/marital"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Phone Number"
+                android:textSize="20dp"/>
+            <EditText
+                android:id="@+id/n5"
+                android:layout_width="400dp"
+                android:layout_height="wrap_content"
+                android:inputType="phone"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Registration Time"
+                android:textSize="20dp"/>
+            <EditText
+                android:id="@+id/n6"
+                android:layout_width="400dp"
+                android:layout_height="wrap_content"/>
+            <Button
+                android:layout_width="100dp"
+                android:layout_height="50dp"
+                android:layout_gravity="left"
+                android:text="Set Time"
+                android:background="#78909c"
+                android:id="@+id/time"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Addiction"
+                android:textSize="20dp"/>
+            <CheckBox
+                android:id="@+id/alcohol"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Alcohol"
+                android:onClick="onCheckboxClicked"/>
+            <CheckBox
+                android:id="@+id/smoking"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Smoking"
+                android:onClick="onCheckboxClicked"/>
+            <Button
+                android:layout_width="100dp"
+                android:layout_height="50dp"
+                android:layout_gravity="left"
+                android:text="Submit"
+                android:background="#78909c"
+                android:id="@+id/submit"
+                android:onClick="onSubmitClicked"/>
+            <Button
+                android:layout_width="100dp"
+                android:layout_height="50dp"
+                android:layout_gravity="left"
+                android:text="Reset"
+                android:background="#78909c"
+                android:id="@+id/reset"
+                android:onClick="onResetClicked"/>
+        </TableLayout>
+    </ScrollView>
 </LinearLayout>
