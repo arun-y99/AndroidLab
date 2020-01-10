@@ -1,5 +1,6 @@
 package com.example.androidlab;
 
+
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.DatePickerDialog;
@@ -15,8 +16,12 @@ import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.Spinner;
+import android.widget.TableLayout;
+import android.widget.TableRow;
+import android.widget.TextView;
 import android.widget.TimePicker;
 
+import java.util.ArrayList;
 import java.util.Calendar;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener, AdapterView.OnItemSelectedListener {
@@ -24,8 +29,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     Button b,t;
     EditText n1,n2,n3,n4,n5,n6;
     String gender,marital,addiction;
-    public static final String EXTRA_MESSAGE = "com.example.androidlab.MESSAGE";
-
+    TableLayout tableLayout;
+    RadioButton male,female;
+    CheckBox smoking,alcohol;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,14 +47,18 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         n6 = findViewById(R.id.n6);
         b.setOnClickListener(this);
         t.setOnClickListener(this);
-
+        tableLayout = findViewById(R.id.display);
+        male = findViewById(R.id.male);
+        female = findViewById(R.id.female);
+        smoking = findViewById(R.id.smoking);
+        alcohol = findViewById(R.id.alcohol);
 
         Spinner spinner =  findViewById(R.id.marital);
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
                 R.array.marital, android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(adapter);
-        spinner.setOnItemSelectedListener(this)
+        spinner.setOnItemSelectedListener(this);
     }
     @Override
     public void onClick(View v) {
@@ -107,11 +117,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.male:
                 if (checked)
                     gender = "male";
-                    break;
+                break;
             case R.id.female:
                 if (checked)
                     gender = "female";
-                    break;
+                break;
         }
     }
 
@@ -124,14 +134,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.alcohol:
                 if (checked)
                     addiction = "alcohol";
-            else
-                break;
+                else
+                    break;
             case R.id.smoking:
                 if (checked)
                     addiction = "smoking";
-            else
-                break;
-            // TODO: Veggie sandwich
+                else
+                    break;
+                // TODO: Veggie sandwich
         }
     }
 
@@ -147,26 +157,35 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
 
     public void onSubmitClicked(View view) {
-        String message = "";
-        message += n1.getText().toString() + " " + n4.getText().toString() + " " + gender + " " + marital + " "
-                + n5.getText().toString() + " " + addiction;
-
-
-    }
+        String name = n1.getText().toString();
+        String dob = n4.getText().toString();
+        String number = n5.getText().toString();
+        int i=0;
+        ArrayList<String> values = new ArrayList<>();
+        values.add(name);
+        values.add(dob);
+        values.add(gender);
+        values.add(marital);
+        values.add(number);
+        values.add(addiction);
+        for(i=0;i<tableLayout.getChildCount();i++){
+            TableRow tableRow = (TableRow) tableLayout.getChildAt(i);
+            TextView temp = (TextView)tableRow.getChildAt(1);
+            temp.setText(values.get(i));
+        }
+     }
 
     public void onResetClicked(View view) {
-
-    }
-
-    public void sendMessage(View view) {
-        Intent intent = new Intent(this, DisplayMessageActivity.class);
-        EditText editText = (EditText) findViewById(R.id.editText);
-        String message = editText.getText().toString();
-        intent.putExtra(EXTRA_MESSAGE, message);
-        startActivity(intent);
+        n1.setText("");
+        n2.setText("");
+        n3.setText("");
+        n4.setText("");
+        n5.setText("");
+        n6.setText("");
+        male.setChecked(false);
+        female.setChecked(false);
+        smoking.setChecked(false);
+        alcohol.setChecked(false);
     }
 
 }
-
-
-
