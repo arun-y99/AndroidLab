@@ -160,6 +160,71 @@
                 android:background="#78909c"
                 android:id="@+id/reset"
                 android:onClick="onResetClicked"/>
+            <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:stretchColumns="1"
+                android:id="@+id/display">
+                <TableRow>
+                    <TextView
+                        android:text="Name"
+                        android:padding="3dip" />
+                    <TextView
+                        android:text=""
+                        android:gravity="right"
+                        android:padding="3dip" />
+                </TableRow>
+
+                <TableRow>
+                    <TextView
+                        android:text="Date of Birth"
+                        android:padding="3dip" />
+                    <TextView
+                        android:text=""
+                        android:gravity="right"
+                        android:padding="3dip" />
+                </TableRow>
+
+                <TableRow>
+                    <TextView
+                        android:text="Gender"
+                        android:padding="3dip" />
+                    <TextView
+                        android:text=""
+                        android:gravity="right"
+                        android:padding="3dip" />
+                </TableRow>
+
+                <TableRow>
+                    <TextView
+                        android:text="Marital Status"
+                        android:padding="3dip" />
+                    <TextView
+                        android:text=""
+                        android:gravity="right"
+                        android:padding="3dip" />
+                </TableRow>
+
+                <TableRow>
+                    <TextView
+                        android:text="Contact number"
+                        android:padding="3dip" />
+                    <TextView
+                        android:text=""
+                        android:gravity="right"
+                        android:padding="3dip" />
+                </TableRow>
+
+                <TableRow>
+                    <TextView
+                        android:text="Addiction"
+                        android:padding="3dip" />
+                    <TextView
+                        android:text=""
+                        android:gravity="right"
+                        android:padding="3dip" />
+                </TableRow>
+            </TableLayout>
         </TableLayout>
     </ScrollView>
 </LinearLayout>
