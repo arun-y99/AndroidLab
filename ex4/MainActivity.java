@@ -15,7 +15,7 @@ import android.widget.ImageView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.ex4.R;
+import com.example.androidlab.R;
 
 public class MainActivity extends AppCompatActivity {
     @Override
@@ -24,6 +24,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         Button bt_paint=findViewById(R.id.bt_paint);
         Button bt_animate=findViewById(R.id.bt_animate);
+        Button bt_animate_fade=findViewById(R.id.bt_animate_fade);
+        Button bt_animate_rotate=findViewById(R.id.bt_animate_rotate);
         Button bt_car=findViewById(R.id.bt_car);
         Button bt_forward=findViewById(R.id.bt_forward);
         Button bt_backward=findViewById(R.id.bt_backward);
@@ -33,6 +35,18 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 iv_animate.startAnimation(AnimationUtils.loadAnimation(getApplicationContext(),R.anim.zoom_in));
+            }
+        });
+        bt_animate_fade.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                iv_animate.startAnimation(AnimationUtils.loadAnimation(getApplicationContext(),R.anim.fade_in));
+            }
+        });
+        bt_animate_rotate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                iv_animate.startAnimation(AnimationUtils.loadAnimation(getApplicationContext(),R.anim.rotate_in));
             }
         });
         bt_paint.setOnClickListener(new View.OnClickListener() {
