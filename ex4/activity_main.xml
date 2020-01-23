@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.ex4.MainActivity">
+    tools:context="com.example.androidlab.MainActivity">
     <Button
         android:id="@+id/bt_paint"
         android:layout_width="wrap_content"
