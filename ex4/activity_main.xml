@@ -19,11 +19,25 @@
         android:layout_below="@+id/bt_paint"
         android:layout_centerHorizontal="true"/>
     <Button
+        android:id="@+id/bt_animate_fade"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Animate"
+        android:layout_below="@+id/bt_animate"
+        android:layout_centerHorizontal="true"/>
+    <Button
+        android:id="@+id/bt_animate_rotate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Animate"
+        android:layout_below="@+id/bt_animate_fade"
+        android:layout_centerHorizontal="true"/>
+    <Button
         android:id="@+id/bt_car"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Car"
-        android:layout_below="@+id/bt_animate"
+        android:layout_below="@+id/bt_animate_rotate"
         android:layout_centerHorizontal="true"/>
     <Button
         android:id="@+id/bt_forward"
