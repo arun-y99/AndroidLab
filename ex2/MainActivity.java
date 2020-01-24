@@ -186,6 +186,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         female.setChecked(false);
         smoking.setChecked(false);
         alcohol.setChecked(false);
+        for(int i=0;i<tableLayout.getChildCount();i++){
+            TableRow tableRow = (TableRow) tableLayout.getChildAt(i);
+            TextView temp = (TextView)tableRow.getChildAt(1);
+            temp.setText("");
+        }
     }
 
 }
