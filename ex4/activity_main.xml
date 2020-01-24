@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.androidlab.MainActivity">
+    tools:context="com.example.ex4.MainActivity">
     <Button
         android:id="@+id/bt_paint"
         android:layout_width="wrap_content"
@@ -15,21 +15,21 @@
         android:id="@+id/bt_animate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Animate"
+        android:text="zoom"
         android:layout_below="@+id/bt_paint"
         android:layout_centerHorizontal="true"/>
     <Button
         android:id="@+id/bt_animate_fade"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Animate"
+        android:text="fade"
         android:layout_below="@+id/bt_animate"
         android:layout_centerHorizontal="true"/>
     <Button
         android:id="@+id/bt_animate_rotate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Animate"
+        android:text="rotate"
         android:layout_below="@+id/bt_animate_fade"
         android:layout_centerHorizontal="true"/>
     <Button
@@ -53,12 +53,27 @@
         android:text="Backward"
         android:layout_below="@+id/bt_forward"
         android:layout_centerHorizontal="true"/>
+    <Button
+        android:id="@+id/bt_circle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="circle"
+        android:layout_below="@+id/bt_backward"
+        android:layout_centerHorizontal="true"/>
+    <Button
+        android:id="@+id/bt_line"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="line"
+        android:layout_below="@+id/bt_circle"
+        android:layout_centerHorizontal="true"/>
+
     <ImageView
         android:id="@+id/iv_animate"
         android:layout_width="match_parent"
         android:layout_height="200dp"
         android:layout_marginLeft="30dp"
         android:layout_marginRight="30dp"
-        android:layout_below="@+id/bt_backward"
+        android:layout_below="@+id/bt_line"
         android:background="@drawable/car"/>
 </RelativeLayout>
