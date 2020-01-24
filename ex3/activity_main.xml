@@ -4,13 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#ffffff"
-    tools:context="com.example.androidlab.MainActivity">
+    android:background="#ccccff"
+    tools:context="com.example.ex3.MainActivity">
     <EditText
         android:id="@+id/et_input"
         android:layout_width="match_parent"
         android:layout_height="180dp"
-        android:background="#F3F2F2"
+        android:background="#c3c2F2"
         android:textSize="40dp"
         android:gravity="right|bottom"/>
     <GridLayout
@@ -327,5 +327,4 @@
                 android:layout_weight="1"/>
         </LinearLayout>
     </GridLayout>
-</RelativeLayout>
 </RelativeLayout>
